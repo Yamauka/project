@@ -1,0 +1,303 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphics}
+\usepackage{pbox}
+\usepackage[x11names]{xcolor}
+\definecolor{brightmaroon}{rgb}{0.76, 0.13, 0.28}
+\definecolor{royalazure}{rgb}{0.0, 0.22, 0.66}
+\usepackage[colorlinks=true,linkcolor=royalazure]{hyperref}
+\usepackage{tikz, tkz-fct, pgfplots}
+\usetikzlibrary{arrows}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm
+} 
+\usepackage[labelsep=period]{caption}
+
+% ----------------- Commands ----------------- 
+\newcommand{\eps}{\varepsilon}
+\newcommand\tline[2]{$\underset{\text{#1}}{\text{\underline{\hspace{#2}}}}$}
+
+% ----------------- Set graphics path ----------------- 
+\graphicspath{{img/}}
+
+\begin{document}
+\newpage 
+\pagestyle{empty}
+\centerline{\large Министерство науки и высшего образования}	
+\centerline{\large Федеральное государственное бюджетное образовательное}
+\centerline{\large учреждение высшего образования}
+\centerline{\large ``Московский государственный технический университет}
+\centerline{\large имени Н.Э. Баумана}
+\centerline{\large (национальный исследовательский университет)''}
+\centerline{\large (МГТУ им. Н.Э. Баумана)}
+\hrule
+\vspace{0.5cm}
+\begin{figure}[h]
+\center
+\includegraphics[height=0.35\linewidth]{bmstu-logo-small.png}
+\end{figure}
+\begin{center}
+	\large	
+	\begin{tabular}{c}
+		Факультет ``Фундаментальные науки'' \\
+		Кафедра ``Высшая математика''		
+	\end{tabular}
+\end{center}
+\vspace{0.5cm}
+\begin{center}
+	\LARGE \bf	
+	\begin{tabular}{c}
+		\textsc{Отчёт} \\
+		по учебной практике \\
+		за 1 семестр 2020---2021 гг.
+	\end{tabular}
+\end{center}
+\vspace{0.5cm}
+\begin{center}
+	\large
+	\begin{tabular}{p{5.3cm}ll}
+		\pbox{5.45cm}{
+			Руководитель практики,\\
+			ст. преп. кафедры ФН1} 	& \tline{\it(подпись)}{5cm} & Кравченко О.В. \\[0.5cm]
+		студент группы ФН1--11 		& \tline{\it(подпись)}{5cm} & Васильев Егор Ринатович.
+	\end{tabular}
+\end{center}
+\vfill
+\begin{center}
+	\large	
+	\begin{tabular}{c}
+		Москва, \\
+		2020 г.
+	\end{tabular}
+\end{center}
+
+\newpage	
+\tableofcontents
+
+\newpage
+\section{Цели и задачи практики}	
+\subsection{Цели}
+--- развитие компетенций, способствующих успешному освоению материала бакалавриата и необходимых в будущей профессиональной деятельности.
+
+\subsection{Задачи}
+\begin{enumerate}
+\item Знакомство с программными средствами, необходимыми в будущей профессиональной деятельности.
+\item Развитие умения поиска необходимой информации в специальной литературе и других источниках.
+\item Развитие навыков составления отчётов и презентации результатов.
+\end{enumerate}
+
+\subsection{Индивидуальное задание}	
+\begin{enumerate}
+\item Изучить способы отображения математической информации в системе вёртски \LaTeX.
+\item Изучить возможности  системы контроля версий \textsf{Git}.
+\item Научиться верстать математические тексты, содержащие формулы и графики в системе \LaTeX.
+Для этого, выполнить установку свободно распространяемого дистрибутива \textsf{TeXLive} и оболочки \textsf{TeXStudio}.
+\item Оформить в системе \LaTeX типовые расчёты по курсе математического анализа согласно своему варианту.
+\item Создать аккаунт на онлайн ресурсе \textsf{GitHub} и загрузить исходные \textsf{tex}--файлы 
+и результат компиляции в формате \textsf{pdf}.
+\end{enumerate} 
+
+\newpage
+\section{Отчёт}
+Актуальность темы продиктована необходимостью владеть системой вёрстки \LaTeX и средой вёрстки \textsf{TeXStudio} для
+отображения текста, формул и графиков. Полученные в ходе практики навыки могут быть применены при написании
+курсовых проектов и дипломной работы, а также в дальнейшей профессиональной деятельности.
+
+Ситема вёрстки \LaTeX содержит большое количество инструментов (пакетов), упрощающих отображение информации в различных 
+сферах инженерной и научной деятельности. 
+
+\newpage
+\section{Индивидуальное задание}
+
+
+
+\subsection{Пределы и непрерывность.}
+
+\begin{center}
+\textbf{Задача № 1.}   
+\end{center}
+
+\textbf{Условие:}
+
+Дана последовательность  $a_{n}=\frac{4n-1}{2n+1}$ и число $c=2$. Доказать,что $\lim\limits_{x\rightarrow\infty} a_{n}=c$, а именно для кажого $\eps > 0$ найти наименьшее натуральное число $N = N(\eps)$ такое, что $|a_{n}-c|<\eps$. Заполнить таблицу:
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+         $\eps$ & $0,1$ & $0,01$ & $0,001$ \\
+         \hline
+         $N(\eps)$ &  &  & \\
+         \hline
+    \end{tabular}
+\end{table}
+
+\textbf{Решение:}
+$$a_{n}=\frac{4n-1}{2n+1}; \; c = 2$$ 
+Найдём лимит $a_{n}$:
+$$\lim\limits_{x\rightarrow\infty} a_{n}= 2 = c;$$
+Рассмотрим  $|a_{n}-c|<\eps$:
+$$|\frac{4n-1}{2n+1} - 2| <\eps;$$
+$$|\frac{4n-1-4n-2}{2n+1}| <\eps;$$
+$$\frac{3}{2n+1} < \eps;$$
+$$n > \frac{3-\eps}{2\eps};$$
+При $\eps = 0,1$ получим:
+$$ n > \frac{3-0,1}{2*0,1} \Leftrightarrow n > 14,5$$
+При $\eps = 0,01$ получим:
+$$ n > \frac{3-0,01}{2*0,01} \Leftrightarrow n > 149,5$$
+При $\eps = 0,001$ получим:
+$$ n > \frac{3-0,001}{2*0,001} \Leftrightarrow n > 1499,5$$
+Заполним таблицу:
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+         $\eps$ & $0,1$ & $0,01$ & $0,001$ \\
+         \hline
+         $N(\eps)$ & $15$ & $150$  & $1500$ \\
+         \hline
+    \end{tabular}
+\end{table}
+
+\newpage
+\begin{center}
+\textbf{Задача № 2.}   
+\end{center}
+
+\textbf{Условие:}
+Вычислить пределы функций
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c}
+         a & $\lim\limits_{x\rightarrow 1} \frac{x^3+5x^2+3x-9}{x^3+4x^2-4x-1}$ \\
+         \hline
+         б & $\lim\limits_{x\rightarrow\infty} \frac{2x\sqrt{x} + \sqrt{1+9x^3}+x}{3x\sqrt{x+10}}$ \\
+         \hline
+         в & $\lim\limits_{x\rightarrow 2} \frac{\sqrt[3]{4x}-2}{\sqrt{2+x}-\sqrt{2x}}$\\
+         \hline
+         г & $\lim\limits_{x\rightarrow 1} (\frac{2x-1}{x})^{\frac{1}{\sqrt[3]{x}-1}}  $\\
+         \hline
+         д & $\lim\limits_{x\rightarrow 0} ({\arccos{4x}})^{\lg{\sin^2{x}}}$ \\
+         \hline
+         е & $\lim\limits_{x\rightarrow 1} \frac{3^{5x-3} - 3^{2x^{2}}}{tg(\pi x)}$
+    \end{tabular}
+\end{table}
+
+\textbf{Решение:}
+
+а)
+$$\lim\limits_{x\rightarrow 1} \frac{x^3+5x^2+3x-9}{x^3+4x^2-4x-1}$$
+Получаем неопределённость: $$[\frac{0}{0}]$$
+Разложим на множители:
+$$\lim\limits_{x\rightarrow 1} \frac{(x+3)^{2}(x-1)}{(x^2+5x+1)(x-1)} $$
+Сокращаем одинаковые множители:
+$$\lim\limits_{x\rightarrow 1} \frac{(x+3)^{2}}{(x^2+5x+1)}=\frac{16}{7}$$
+
+б)
+$$\lim\limits_{x\rightarrow\infty} \frac{2x\sqrt{x} + \sqrt{1+9x^3}+x}{3x\sqrt{x+10}}$$
+Получаем неопределённость: $$[\frac{0}{0}]$$
+Делим на $x^{\frac{3}{2}}$ верхнюю и нижнюю часть:
+$$\lim\limits_{x\rightarrow\infty} \frac{2+\sqrt{\frac{1}{x}+9}+\frac{1}{\sqrt{x}}}{3\sqrt{1+\frac{10}{x}}} = \frac{5}{3} $$
+
+
+в)
+$$\lim\limits_{x\rightarrow 2} \frac{\sqrt[3]{4x}-2}{\sqrt{2+x}-\sqrt{2x}}$$
+Получаем неопределённость: $$[\frac{0}{0}]$$
+Домножим начальное выражение на сопряженные множители:
+$$\lim\limits_{x\rightarrow 2} \frac{(4x-8)(\sqrt{2+x}+\sqrt{2x})}{(2-x)(\sqrt[3]{(4x)^{2}}+2\sqrt[3]{4x}+4)} $$
+\newpage
+Сократим множители и вынесем коэффициент за предел:
+$$-4\lim\limits_{x\rightarrow 2} \frac{(\sqrt{2+x}+\sqrt{2x})}{(\sqrt[3]{(4x)^{2}}+2\sqrt[3]{4x}+4)} =-\frac{4}{3} $$
+
+г)
+$$\lim\limits_{x\rightarrow 1} (\frac{2x-1}{x})^{\frac{1}{\sqrt[3]{x}-1}}  $$
+Подставляя значение получим:
+$$[ 1^{\infty}]$$
+Используя секретную формулу \textnumero $197$ получим:
+$$e^{\lim\limits_{x\rightarrow 1} (\frac{2x-1}{x} - 1)({\frac{1}{\sqrt[3]{x}-1}})}$$
+Считаем чему равна степень:
+$$\lim\limits_{x\rightarrow 1} (\frac{2x-1}{x} - 1)({\frac{1}{\sqrt[3]{x}-1}})$$
+$$\lim\limits_{x\rightarrow 1} (\frac{x-1}{x})({\frac{1}{\sqrt[3]{x}-1}})$$
+Умножаем на сопряженное выражение к $\sqrt[3]{x}-1$:
+$$\lim\limits_{x\rightarrow 1} \frac{\sqrt[3]{x^{2}} + \sqrt[3]{x}+1}{x}=3$$
+Значит предел начального выражения равен:
+$$e^{3}$$
+
+д)
+$$\lim\limits_{x\rightarrow 0} ({\arccos{4x}})^{\lg{\sin^2{x}}}$$
+Подставляя значение получим:
+$$[(\frac{\pi}{2})^{-\infty}]= 0$$
+
+е)
+$$\lim\limits_{x\rightarrow 1} \frac{3^{5x-3} - 3^{2x^{2}}}{tg(\pi x)}$$
+Получаем неопределённость: $$[\frac{0}{0}]$$
+$$\lim\limits_{x\rightarrow 1} \frac{3^{2x^{2}}(3^{5x-3-2x^{2}} - 1)}{{tg(\pi x)}}$$
+Выполним замену переменных $t = x - 1;\; t \rightarrow 0$ 
+$$\lim\limits_{t\rightarrow 0} \frac{3^{2(t+1)^{2}}(3^{t-2t^{2}} - 1)}{{tg(\pi t + \pi)}}$$
+По формуле поворота для тангенса получим:
+$$\tg(\pi t+ \pi))= tg(\pi t)$$
+Заменим это выражение на эквивалетное при $t \rightarrow 0$:
+$$tg(\pi t)  \sim \pi t$$
+
+\newpage
+Подставим в знаменатель это выражение:
+$$\lim\limits_{t\rightarrow 0} \frac{3^{2(t+1)^{2}}(3^{t-2t^{2}} - 1)}{{\pi t }}$$
+Заменим $3^{t-2t^{2}} - 1$ на эквивалентное при $t \rightarrow 0$:
+$$3^{t-2t^{2}} - 1 = t(1-2t)*\ln{3}$$
+Подставим в числитель это выражение:
+$$\lim\limits_{t\rightarrow 0} \frac{3^{2(t+1)^{2}}(t(1-2t)*\ln{3})}{{\pi t }}$$
+Сократим:
+$$\lim\limits_{t\rightarrow 0} \frac{3^{2(t+1)^{2}}((1-2t)*\ln{3})}{{\pi}} = \frac{9\ln{3}}{\pi}$$ \\
+Ответ:а) $\frac{16}{7}$; б)$\frac{5}{3}$; в)$-\frac{4}{3}$; г)$e^{3}$; д)$0$;
+е)$\frac{9\ln{3}}{\pi}$
+
+\newpage
+\begin{center}
+\textbf{Задача № 3.}   
+\end{center}
+\textbf{Условие:}
+а) Показать, что данные функции $f(x)$ и $g(x)$ являются бесконечно малыми или бесконечно большими
+при указанном стремлении аргумента. б) Для каждой функции $f(x)$ и $g(x)$ записать главную часть
+(эквивалентную ей функцию)  вида $C(x-x_0)^{\alpha}$ при $x\rightarrow x_0$ или $Cx^{\alpha}$
+при $x\rightarrow\infty$, указать их порядки малости (роста). в) Сравнить функции $f(x)$ и $g(x)$ при указанном стремлении.$f(x) = \sqrt[3]{1-{\sqrt[3]{x}}};\; g(x) = 4(x-1)^{2}$
+
+\textbf{Решение:}
+
+а)
+$$\lim\limits_{x\rightarrow 1} f(x) = \lim\limits_{x\rightarrow 1}\sqrt[3]{1-{\sqrt[3]{x}}}=0 $$ 
+Получается f(x) БМ.
+$$\lim\limits_{x\rightarrow 1} g(x) = \lim\limits_{x\rightarrow 1} 4(x-1)^{2} = 0 $$
+Получается g(x) БМ.
+
+б)
+Нужно привести к виду:
+$$\underset{x \rightarrow 1}{f(x)} = C(x-1)^{p}$$
+$$\underset{x \rightarrow 1}{g(x)} = C(x-1)^{p}$$
+$$f(x) = \sqrt[3]{1-{\sqrt[3]{x}}}$$
+Выполним замену переменных $t = x-1; \; t \rightarrow 0:$
+$$f(x)=\sqrt[3]{1-{\sqrt[3]{t+1}}} \sim -\sqrt[3]{\frac{1}{3} t}$$
+Получим:
+$$f(x)= \sqrt[3]{\frac{1}{3}} * (x-1)^{\frac{1}{3}}$$
+$f(x)$ - БМ $\frac{1}{3}$ порядка
+Для $g(x)$:
+$$g(x) = 4(x-1)^{2}$$
+$g(x)$ - БМ $2$ порядка
+
+в)
+$$\lim\limits_{x\rightarrow 1} \frac{g(x)}{f(x)} = 0$$ 
+
+Получается $f(x) = o(g(x))$
+
+\newpage
+\addcontentsline{toc}{section}{Список литературы}
+\begin{thebibliography}{99}
+\bibitem{book01} Львовский С.М. Набор и вёрстка в системе \LaTeX, 2003 c.
+\bibitem{book02} Котельников И.А. \LaTeX \; 2e по-русски, 2004.
+\end{thebibliography}
+
+\end{document}
